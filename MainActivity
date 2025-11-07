@@ -1,0 +1,56 @@
+package com.example.bt2;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+    // Declare variables
+    private EditText edittaikhoan;
+    private EditText editmatkhau;
+    private Button btnLogin;
+    private Button btnCancel;
+    private TextView txtKetQua;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // Map views
+        edittaikhoan = findViewById(R.id.edittextPassid);
+        editmatkhau = findViewById(R.id.edittextPassid);
+        btnLogin = findViewById(R.id.btnLogIn);
+        btnCancel = findViewById(R.id.btnCancel);
+        txtKetQua = findViewById(R.id.txtKetQuaid);
+
+        // Handle Login button click
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String user = edittaikhoan.getText().toString();
+                String pass = editmatkhau.getText().toString();
+
+                if (user.equals("Teo") && pass.equals("123")) {
+                    String msg = "Chào bạn " + user + " đến với Android";
+                    Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
+                    txtKetQua.setText(msg);
+                } else {
+                    txtKetQua.setText("Bạn nhập sai tài khoản hoặc mật khẩu ???");
+                }
+            }
+        });
+
+        // Handle Cancel button click
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish(); // Exit app
+            }
+        });
+    }
+}
