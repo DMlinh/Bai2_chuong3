@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <!-- Logo -->
+    <ImageView
+        android:id="@+id/imgViewid"
+        android:src="@mipmap/ic_launcher_round"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:contentDescription="Logo" />
+
+    <!-- Ô nhập User -->
+    <EditText
+        android:id="@+id/edittextUserid"
+        android:hint="User Name"
+        android:inputType="textPersonName"
+        android:textSize="18sp"
+        android:layout_width="match_parent"
+        android:layout_height="48dp" />
+
+    <!-- Ô nhập Password -->
+    <EditText
+        android:id="@+id/edittextPassid"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textSize="18sp"
+        android:layout_width="match_parent"
+        android:layout_height="48dp" />
+
+    <!-- Nút Login & Cancel -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <Button
+            android:id="@+id/btnLogIn"
+            android:text="Login"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:text="Cancel"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <!-- Text hiển thị kết quả -->
+    <TextView
+        android:id="@+id/txtKetQuaid"
+        android:textSize="18sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:gravity="center" />
+
+</LinearLayout>
